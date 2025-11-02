@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form Penyewaan | Veilside Gear</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" />
+    <style>
+      body { background: #f8faf9; }
+      .form-container {
+        max-width: 550px; margin: 60px auto; background: #fff;
+        padding: 30px 40px; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      }
+      h2 { text-align: center; margin-bottom: 25px; color: #136f63; }
+      label { font-weight: 600; margin-top: 12px; display: block; color: #333; }
+      input, select {
+        width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;
+        margin-top: 5px; font-size: 15px;
+      }
+      .qr-section { text-align: center; margin-top: 20px; display:none; }
+      .qr-section img { width: 200px; margin: 10px 0; }
+      button {
+        display: block; width: 100%; background: #136f63; color: #fff;
+        border: none; border-radius: 8px; padding: 12px; font-size: 16px;
+        cursor: pointer; margin-top: 25px; transition: .3s;
+      }
+      button:hover { background: #0b4d47; }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="Logo Veilside Gear" />
+          <span>Veilside Gear</span>
+        </a>
+        <nav>
+          <a href="index.html">Beranda</a>
+          <a href="sewa.html">Daftar Produk</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="form-container">
+        <h2>Form Penyewaan</h2>
+
+        <!-- Ringkasan keranjang (diisi otomatis oleh sewa.js) -->
+        <div id="cart-summary" style="margin-bottom:20px"></div>
+
+        <form id="rental-form">
+          <label for="name">Nama Penyewa</label>
+          <input type="text" id="name" placeholder="Masukkan nama Anda" required />
+
+          <label for="wa">Nomor WhatsApp</label>
+          <input type="text" id="wa" placeholder="08xxxxxxxxxx" required />
+
+          <label for="start">Tanggal Sewa</label>
+          <input type="date" id="start" required />
+
+          <label for="days">Lama Sewa (hari)</label>
+          <input type="number" id="days" min="1" value="1" required />
+
+          <label for="payment">Metode Pembayaran</label>
+          <select id="payment" required>
+            <option value="">-- Pilih Metode --</option>
+            <option value="cash">Cash</option>
+            <option value="qris">QRIS</option>
+          </select>
+
+          <div class="qr-section" id="qr-section">
+            <p>Scan kode QR berikut untuk pembayaran:</p>
+            <img src="qris.png" alt="QRIS" />
+            <p>QRIS</p>
+          </div>
+
+          <button type="submit">Konfirmasi Pemesanan</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>© 2025 Veilside Gear</footer>
+
+    <!-- logika form + keranjang + diskon ada di sewa.js -->
+    <script src="sewa.js"></script>
+  </body>
+</html>

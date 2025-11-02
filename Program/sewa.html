@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daftar Produk | Veilside Gear</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="Logo Veilside Gear" />
+          <span>Veilside Gear</span>
+        </a>
+        <nav>
+          <a href="index.html">Beranda</a>
+          <a href="form.html" class="btn-primary">Form Sewa</a>
+          <!-- tombol keranjang -->
+          <button id="cart-toggle" class="btn-cart" type="button">
+            🛒 Keranjang (<span id="cart-count">0</span>)
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" style="background:#136f63;color:#fff;text-align:center;padding:60px 20px;">
+      <div class="container">
+        <h2>Daftar Perlengkapan Outdoor</h2>
+        <p>Pilih barang yang kamu butuhkan, lalu cek keranjang sebelum lanjut ke form penyewaan.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="product-list" class="grid"></div>
+        <a
+          href="form.html"
+          class="btn-primary"
+          style="display:block;width:max-content;margin:30px auto 0"
+        >
+          Lanjut ke Form Penyewaan
+        </a>
+      </div>
+    </section>
+
+    <!-- PANEL KERANJANG -->
+    <aside id="cart-panel" class="cart-panel" aria-label="Keranjang penyewaan">
+      <div class="cart-header">
+        <h3>Keranjang</h3>
+        <button id="cart-close" type="button">✕</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <!-- item keranjang di-render via sewa.js -->
+      </div>
+      <div class="cart-footer">
+        <p>Total per hari: <strong id="cart-total">Rp 0</strong></p>
+        <a href="form.html" class="btn-primary" style="width:100%;text-align:center;">Lanjut ke Form</a>
+      </div>
+    </aside>
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 Veilside Gear – Sistem Penyewaan Outdoor</p>
+      </div>
+    </footer>
+
+    <script src="sewa.js"></script>
+  </body>
+</html>
