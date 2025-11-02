@@ -2,113 +2,160 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Veilside Gear – Penyewaan Perlengkapan Outdoor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veilside Gear</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <!-- Navbar -->
-    <header class="navbar" role="banner">
-      <div class="container nav-content">
-        <a href="index.html" class="logo" aria-label="Beranda Veilside Gear">
-          <img src="logo.png" alt="Logo Veilside Gear" />
-          <span>Veilside Gear</span>
+    <!-- Navbar BOOTSTRAP -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: #199b8a"
+    >
+      <div class="container-fluid">
+        <!-- untuk logo + nama -->
+        <a class="navbar-brand d-flex align-items-center text-white" href="#">
+          <img src="logo.png" alt="Logo" width="60" height="54" class="me-2" />
+          <span class="fw-bold">Veilside Adventure</span>
         </a>
-        <nav aria-label="Navigasi utama">
-          <a href="#tentang">Tentang</a>
-          <a href="#layanan">Layanan</a>
-          <a href="#kontak">Kontak</a>
-          <a href="sewa.html" class="btn-primary">Sewa Sekarang</a>
-        </nav>
-      </div>
-    </header>
 
-    <!-- Hero -->
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <div class="container">
-        <h2 id="hero-title">Teman Setia Petualanganmu 🌲</h2>
+        <!-- untuk tampilan mobile (toogle) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu di navbar -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#home"
+                >Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="sewa.html">Produk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Riwayat</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Teman Setia Petualanganmu !</h1>
         <p>
           Veilside Gear menyediakan berbagai perlengkapan outdoor terbaik untuk
           mendukung kegiatan camping, hiking, dan petualangan alam kamu.
         </p>
-        <a href="sewa.html" class="btn-primary" aria-label="Mulai sewa sekarang">
-          Mulai Sewa Sekarang
-        </a>
-      </div>
+        <a href="sewa.html" class="btn-primary">Sewa Sekarang</a>
+      </main>
     </section>
 
-    <!-- Tentang -->
-    <section id="tentang" class="section" role="region" aria-labelledby="about-title">
+    <!-- Tentang Kami -->
+    <section class="section" id="tentang">
       <div class="container">
-        <h2 id="about-title">Tentang Kami</h2>
+        <h2>About Us</h2>
         <p>
-          Kami berdiri dengan tujuan membantu para pecinta alam agar dapat
-          menikmati kegiatan outdoor tanpa harus membeli perlengkapan yang mahal.
-          Dengan sistem sewa yang mudah, harga terjangkau, dan barang berkualitas,
-          kami ingin menjadi solusi praktis bagi para petualang Indonesia.
+          Veilside Adventure hadir untuk mendukung para pecinta alam dalam
+          menjelajahi keindahan alam Indonesia tanpa perlu khawatir tentang
+          perlengkapan. Kami menyediakan layanan sewa perlengkapan outdoor yang
+          lengkap, berkualitas, dan terjangkau. Dengan sistem sewa yang mudah
+          serta pelayanan yang ramah, kami berkomitmen menjadi partner terbaik
+          dalam setiap perjalanan petualanganmu.
         </p>
       </div>
     </section>
 
     <!-- Layanan -->
-    <section id="layanan" class="section bg-light" role="region" aria-labelledby="services-title">
+    <section class="section bg-light" id="layanan">
       <div class="container">
-        <h2 id="services-title">Layanan Kami</h2>
-
+        <h2>Layanan Kami</h2>
         <div class="grid">
           <div class="card">
             <h3>Penyewaan Perlengkapan</h3>
-            <p>Beragam perlengkapan camping seperti tenda, kompor portable, sleeping bag, dan lainnya.</p>
+            <p>
+              Nikmati kemudahan menyewa berbagai perlengkapan camping seperti
+              tenda, kompor portable, sleeping bag, carrier, dan banyak lagi —
+              semua dalam kondisi bersih dan siap pakai.
+            </p>
           </div>
           <div class="card">
-            <h3>Paket Hemat</h3>
-            <p>Dapatkan paket sewa lengkap dengan harga spesial untuk kelompok dan komunitas.</p>
-          </div>
-          <div class="card">
-            <h3>Pengantaran &amp; Pengambilan</h3>
-            <p>Layanan antar-jemput perlengkapan langsung ke lokasi kamu (wilayah tertentu).</p>
+            <h3>Pengantaran & Pengambilan</h3>
+            <p>
+              Tak perlu repot datang ke lokasi! Kami menyediakan layanan
+              antar-jemput perlengkapan langsung ke tempat kamu (untuk area
+              tertentu), agar persiapan petualanganmu semakin praktis.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Kontak -->
-    <section id="kontak" class="section" role="region" aria-labelledby="contact-title">
+    <section id="kontak" class="section">
       <div class="container">
-        <h2 id="contact-title">Hubungi Kami</h2>
+        <h2>Hubungi Kami</h2>
         <p>Untuk pemesanan atau pertanyaan, hubungi kami melalui WhatsApp:</p>
-        <a href="https://wa.me/628123456789" target="_blank" rel="noopener" class="btn-primary">
-          Chat via WhatsApp
-        </a>
-        <p class="small">Atau kunjungi kami di Veilside Adventure Store, Yogyakarta.</p>
+        <a href="https://wa.me/628123456789" target="_blank" class="btn-primary"
+          >Chat via WhatsApp</a
+        >
+        <p class="small">
+          Atau kunjungi kami di Veilside Adventure Store, Ngawi.
+        </p>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
+    <footer>
       <div class="container">
         <p>© 2025 Veilside Gear. Semua hak dilindungi.</p>
       </div>
     </footer>
 
-    <!-- Reminder H-1 (dipertahankan) -->
     <script>
-      const reminder = JSON.parse(localStorage.getItem("vs_reminder") || "null");
+      // 🔔 Cek apakah ada pengingat penyewaan di localStorage
+      const reminder = JSON.parse(
+        localStorage.getItem("vs_reminder") || "null"
+      );
       if (reminder) {
         const now = new Date();
         const due = new Date(reminder.tanggalSelesai);
         const oneDayBefore = new Date(due);
         oneDayBefore.setDate(due.getDate() - 1);
 
+        // Jika hari ini sudah H-1
         if (now.toDateString() === oneDayBefore.toDateString()) {
-          const msg =
-            `Halo ${reminder.nama}, ini pengingat dari Veilside Gear 😊\n` +
-            `Besok (${due.toLocaleDateString("id-ID")}) adalah jadwal pengembalian barang sewaan Anda.\n` +
-            `Terima kasih sudah menyewa di Veilside Gear!`;
-          const waURL = `https://wa.me/${reminder.wa}?text=${encodeURIComponent(msg)}`;
+          const msg = `Halo ${
+            reminder.nama
+          }, ini pengingat dari Veilside Gear 😊\nBesok (${due.toLocaleDateString(
+            "id-ID"
+          )}) adalah jadwal pengembalian barang sewaan Anda.\nTerima kasih sudah menyewa di Veilside Gear!`;
+          const waURL = `https://wa.me/${reminder.wa}?text=${encodeURIComponent(
+            msg
+          )}`;
           alert("🔔 Pengingat: Besok adalah jadwal pengembalian barang!");
           window.open(waURL, "_blank");
+          // Hapus setelah dikirim agar tidak berulang
           localStorage.removeItem("vs_reminder");
         }
       }
