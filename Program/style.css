@@ -10,13 +10,13 @@
 
 :root {
   --brand: #136f63;
-  --brand-2: #0b4d47;
+  --brand-2: #136f63;
   --brand-contrast: #ffffff;
   --bg: #f9f9f9;
   --bg-light: #eef7f6;
   --text: #333333;
   --muted: #666666;
-  --radius-md: 10px;
+  --radius-md: 20px;
   --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
@@ -32,19 +32,22 @@ body {
   line-height: 1.6;
 }
 body {
-  padding-top: 90px;
-} /* karena navbar fixed */
+  padding-top: 100px;
+}
+
+/* karena navbar fixed */
 body > main,
 body > .section {
   flex: 1 0 auto;
 }
+
 footer {
   flex-shrink: 0;
 }
 
 /* container */
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -71,7 +74,7 @@ footer {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 30px;
   text-decoration: none;
   color: var(--brand-contrast);
   font-size: 26px;
@@ -94,7 +97,7 @@ nav a:hover {
   color: #c7f9cc;
 }
 .navbar-nav .nav-link:hover {
-  color: #ffd54f !important; /* efek hover kuning pada beranda, dkk */
+  color: #dcee3c !important; /* efek hover  pada beranda, dkk */
 }
 
 /* button */
@@ -117,7 +120,7 @@ nav a:hover {
   transform: translateY(1px);
 }
 
-/* hero */
+/* ========= HERO DASHBOARD (INDEX.HTML) ======== */
 .content {
   min-height: 80vh;
   background: url("../Mountain\ Landscape\ \(1\).jpeg") center/cover no-repeat;
@@ -159,7 +162,7 @@ nav a:hover {
   background: var(--bg-light);
 }
 
-/* grid & card */
+/* ======== MENGATUR GRID & CARD PRODUK (SEWA.HTML) ======= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -186,7 +189,7 @@ nav a:hover {
   margin-top: 6px;
 }
 
-/* product images */
+/* ========= MENGATUR FOTO PRODUK ======== */
 .product-img {
   width: 100%;
   height: 160px;
@@ -202,7 +205,7 @@ nav a:hover {
   }
 }
 
-/* footer */
+/* ====== FOOTER SEWA.HTML ========= */
 footer {
   background: var(--brand-2);
   color: #ffffff;
@@ -216,22 +219,26 @@ footer {
   margin-top: 10px;
 }
 
-/* cart summary table */
-#cart-summary table {
-  width: 100%;
-  border-collapse: collapse;
-}
-#cart-summary th,
-#cart-summary td {
-  padding: 8px 10px;
-  border-bottom: 1px solid #eee;
-}
-#cart-summary th:last-child,
-#cart-summary td:last-child {
-  text-align: right;
+/* =========== CART / KERANJANG =========  */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* jarak antar menu */
 }
 
-/* responsive */
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* jarak icon dan angka */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cart-btn i {
+  font-size: 20px;
+}
+
+/* ========= UNTUK TAMPILAN RESPONSIF ========== */
 @media (max-width: 768px) {
   .hero {
     padding: 80px 15px;
@@ -256,9 +263,6 @@ footer {
   border-radius: 999px;
   cursor: pointer;
   font-weight: 500;
-}
-.btn-cart:hover {
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .cart-panel {

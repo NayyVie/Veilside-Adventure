@@ -1,10 +1,18 @@
+<!-- Nama Anggota Kelompok 4:
+ 1. Adam Hyero Satria > 1202230006
+ 2. Ahsha Aisna Al Wafi > 1202230035
+ 3. Nayodya Fairuz Sadina > 1202230059
+ 4. Muhammad Habibie Ebam > 1202210017 
+ -->
+
 <!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Veilside Gear</title>
+    <title>Veilside Adventure</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,7 +24,7 @@
     <!-- Navbar BOOTSTRAP -->
     <nav
       class="navbar navbar-expand-lg fixed-top"
-      style="background-color: #199b8a"
+      style="background-color: #136f63"
     >
       <div class="container-fluid">
         <!-- untuk logo + nama -->
@@ -65,8 +73,8 @@
       <main class="content">
         <h1>Teman Setia Petualanganmu !</h1>
         <p>
-          Veilside Gear menyediakan berbagai perlengkapan outdoor terbaik untuk
-          mendukung kegiatan camping, hiking, dan petualangan alam kamu.
+          Veilside Adventure menyediakan berbagai perlengkapan outdoor terbaik
+          untuk mendukung kegiatan camping, hiking, dan petualangan alam kamu.
         </p>
         <a href="sewa.html" class="btn-primary">Sewa Sekarang</a>
       </main>
@@ -93,19 +101,20 @@
         <h2>Layanan Kami</h2>
         <div class="grid">
           <div class="card">
-            <h3>Penyewaan Perlengkapan</h3>
+            <h3>Penyewaan Perlengkapan Outdoor</h3>
             <p>
-              Nikmati kemudahan menyewa berbagai perlengkapan camping seperti
-              tenda, kompor portable, sleeping bag, carrier, dan banyak lagi —
-              semua dalam kondisi bersih dan siap pakai.
+              Nikmati kemudahan menyewa berbagai perlengkapan Outdoorseperti
+              tenda, kompor portable, sleeping bag, carrier, dan banyak lagi
+              alat outdoor lainnya. semua dalam kondisi bersih dan siap pakai
             </p>
           </div>
           <div class="card">
-            <h3>Pengantaran & Pengambilan</h3>
+            <h3>Antar-Jemput dan Guide Pendakian</h3>
             <p>
-              Tak perlu repot datang ke lokasi! Kami menyediakan layanan
-              antar-jemput perlengkapan langsung ke tempat kamu (untuk area
-              tertentu), agar persiapan petualanganmu semakin praktis.
+              Siap antar-jemput ke base camp pendakian Gunung Lawu, Bukit
+              Mongkrang, Bukit Kendhil, dan Bukit sekitar Tawangmanggu. Melayani
+              Guide Pendakian dan Porter Pendakian, siap menemani pendakian anda
+              dan mendokumentasikan selama perjalanan.
             </p>
           </div>
         </div>
@@ -117,18 +126,21 @@
       <div class="container">
         <h2>Hubungi Kami</h2>
         <p>Untuk pemesanan atau pertanyaan, hubungi kami melalui WhatsApp:</p>
-        <a href="https://wa.me/628123456789" target="_blank" class="btn-primary"
+        <a
+          href="https://wa.me/6281459125873"
+          target="_blank"
+          class="btn-primary"
           >Chat via WhatsApp</a
         >
         <p class="small">
-          Atau kunjungi kami di Veilside Adventure Store, Ngawi.
+          Atau kunjungi kami di Veilside Adventure Store, Kendal-Ngawi.
         </p>
       </div>
     </section>
 
     <footer>
       <div class="container">
-        <p>© 2025 Veilside Gear. Semua hak dilindungi.</p>
+        <p>© 2025 Veilside Adventure. Anda Nyaman Kami Senang.</p>
       </div>
     </footer>
 
@@ -147,9 +159,9 @@
         if (now.toDateString() === oneDayBefore.toDateString()) {
           const msg = `Halo ${
             reminder.nama
-          }, ini pengingat dari Veilside Gear 😊\nBesok (${due.toLocaleDateString(
+          }, ini pengingat dari Veilside Adventure 😊\nBesok (${due.toLocaleDateString(
             "id-ID"
-          )}) adalah jadwal pengembalian barang sewaan Anda.\nTerima kasih sudah menyewa di Veilside Gear!`;
+          )}) adalah jadwal pengembalian barang sewaan Anda.\nTerima kasih sudah menyewa di Veilside Adventure!`;
           const waURL = `https://wa.me/${reminder.wa}?text=${encodeURIComponent(
             msg
           )}`;

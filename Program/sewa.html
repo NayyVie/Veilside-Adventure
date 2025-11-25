@@ -3,32 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Daftar Produk | Veilside Gear</title>
+    <title>Produk</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
+
+  <!-- NAVBAR -->
   <body>
     <header class="navbar">
       <div class="container nav-content">
         <a href="index.html" class="logo">
-          <img src="logo.png" alt="Logo Veilside Gear" />
-          <span>Veilside Gear</span>
+          <img src="logo.png" alt="Logo Veilside Adventure" />
+          <span>Veilside Adventure</span>
         </a>
-        <nav>
+
+        <nav class="nav-menu">
           <a href="index.html">Beranda</a>
-          <a href="form.html" class="btn-primary">Form Sewa</a>
-          <!-- tombol keranjang -->
-          <button id="cart-toggle" class="btn-cart" type="button">
-            🛒 Keranjang (<span id="cart-count">0</span>)
-          </button>
+          <a href="form.html">Form Sewa</a>
+
+          <!-- KERANJANG DI NAVBAR -->
+          <div id="cart-toggle" class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">1</span>
+          </div>
         </nav>
       </div>
     </header>
 
-    <section class="hero" style="background:#136f63;color:#fff;text-align:center;padding:60px 20px;">
+    <section
+      class="hero"
+      style="
+        background: #199181e3;
+        color: #fff;
+        text-align: center;
+        padding: 60px 20px;
+      "
+    >
       <div class="container">
         <h2>Daftar Perlengkapan Outdoor</h2>
-        <p>Pilih barang yang kamu butuhkan, lalu cek keranjang sebelum lanjut ke form penyewaan.</p>
+        <p>
+          Pilih barang yang kamu butuhkan, lalu cek keranjang sebelum lanjut ke
+          form penyewaan.
+        </p>
       </div>
     </section>
 
@@ -38,7 +58,7 @@
         <a
           href="form.html"
           class="btn-primary"
-          style="display:block;width:max-content;margin:30px auto 0"
+          style="display: block; width: max-content; margin: 30px auto 0"
         >
           Lanjut ke Form Penyewaan
         </a>
@@ -56,14 +76,19 @@
       </div>
       <div class="cart-footer">
         <p>Total per hari: <strong id="cart-total">Rp 0</strong></p>
-        <a href="form.html" class="btn-primary" style="width:100%;text-align:center;">Lanjut ke Form</a>
+        <a
+          href="form.html"
+          class="btn-primary"
+          style="width: 100%; text-align: center"
+          >Lanjut ke Form</a
+        >
       </div>
     </aside>
     <div id="cart-backdrop" class="cart-backdrop"></div>
 
     <footer>
       <div class="container">
-        <p>© 2025 Veilside Gear – Sistem Penyewaan Outdoor</p>
+        <p>© 2025 Veilside Adventure – Sistem Penyewaan Alat Outdoor</p>
       </div>
     </footer>
 
