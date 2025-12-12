@@ -27,6 +27,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <!-- Navbar BOOTSTRAP -->
     <nav
@@ -35,9 +36,9 @@
     >
       <div class="container-fluid">
         <!-- untuk logo + nama -->
-        <a class="navbar-brand d-flex align-items-center text-white" href="#">
+        <a class="navbar-brand d-flex align-items-center text-white">
           <img src="logo.png" alt="Logo" width="60" height="54" class="me-2" />
-          <span class="fw-bold">Veilside Adventure</span>
+          <span id="brand-text" class="fw-bold">Veilside Adventure</span>
         </a>
 
         <!-- untuk tampilan mobile (toogle) -->
@@ -85,31 +86,40 @@
           untuk mendukung kegiatan camping, hiking, dan petualangan alam kamu.
         </h4>
         <br />
-        <a href="sewa.html" class="btn-primary">Sewa Sekarang</a>
+        <a href="sewa.html" class="btn-primaryy">Sewa Sekarang</a>
       </main>
     </section>
 
-    <!-- Tentang Kami -->
-    <section class="section" id="tentang">
+    <!-- About Section -->
+    <section class="about" id="about">
       <div class="container">
-        <h2>About Us</h2>
-        <p>
-          Veilside Adventure hadir untuk mendukung para pecinta alam dalam
-          menjelajahi keindahan alam Indonesia tanpa perlu khawatir tentang
-          perlengkapan. Kami menyediakan layanan sewa perlengkapan outdoor yang
-          lengkap, berkualitas, dan terjangkau. Dengan sistem sewa yang mudah
-          serta pelayanan yang ramah, kami berkomitmen menjadi partner terbaik
-          dalam setiap perjalanan petualanganmu.
-        </p>
+        <h2><span>About</span> Us</h2>
+
+        <div class="row">
+          <div class="about-img">
+            <img src="Logi_kotakOrange.png" alt="About Us" />
+          </div>
+          <div class="content">
+            <p>
+              Veilside Adventure hadir untuk mendukung para pecinta alam dalam
+              menjelajahi keindahan alam Indonesia tanpa perlu khawatir tentang
+              perlengkapan. Kami menyediakan layanan sewa perlengkapan outdoor
+              yang lengkap, berkualitas, dan terjangkau. Dengan sistem sewa yang
+              mudah serta pelayanan yang ramah, kami berkomitmen menjadi partner
+              terbaik dalam setiap perjalanan petualanganmu.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Layanan -->
-    <section class="section bg-light" id="layanan">
+    <!-- Layanan Section -->
+    <section class="layanan bg-light" id="layanan">
       <div class="container">
-        <h2>Layanan Kami</h2>
+        <h2><span>Layanan</span> Kami</h2>
         <div class="grid">
           <div class="card">
+            <img src="rent-removebg-preview__1_-removebg-preview.png" />
             <h3>Penyewaan Perlengkapan Outdoor</h3>
             <p>
               Nikmati kemudahan menyewa berbagai perlengkapan Outdoorseperti
@@ -118,6 +128,9 @@
             </p>
           </div>
           <div class="card">
+            <img
+              src="Ilustrasi Lencana Petualangan Outdoor Gunung Vintage, Pendakian, Gunung, Lereng PNG dan Vektor dengan Background Transparan untuk Unduh Gratis.jfif"
+            />
             <h3>Antar-Jemput dan Guide Pendakian</h3>
             <p>
               Siap antar-jemput ke base camp pendakian Gunung Lawu, Bukit
@@ -130,7 +143,72 @@
       </div>
     </section>
 
-    <!-- Kontak -->
+    <!-- Feedback Section -->
+    <section class="feedback" id="feedback">
+      <div class="container">
+        <h2><span>Apa Kata</span> Mereka?</h2>
+
+        <div class="feedback-grid">
+          <!-- Card 1 -->
+          <div class="feedback-card pink">
+            <div class="profile">
+              <img src="https://i.pravatar.cc/80?img=12" alt="User" />
+              <div>
+                <h3>Hamam Paruk</h3>
+                <p>Pendaki</p>
+              </div>
+            </div>
+
+            <p class="text">
+              Rekomendasi tempat sewa outdoor perbatasan Ngawi Magetan
+            </p>
+
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feedback-card green">
+            <div class="profile">
+              <img
+                src="https://images.pexels.com/photos/9163/night.jpg"
+                alt="User"
+              />
+              <div>
+                <h3>Much Panca</h3>
+                <p>Traveller</p>
+              </div>
+            </div>
+
+            <p class="text">
+              Rekomend buat para hiking atau trekking, Rental items are all
+              available
+            </p>
+
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feedback-card yellow">
+            <div class="profile">
+              <img src="https://i.pravatar.cc/80?img=45" alt="User" />
+              <div>
+                <h3>Alicia John</h3>
+                <p>Hiker</p>
+              </div>
+            </div>
+
+            <p class="text">
+              Perjalanan terorganisir dengan baik, aman, dan sangat seru!
+              Rekomendasi banget.
+            </p>
+
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
     <section id="kontak" class="section">
       <div class="container">
         <h2>Hubungi Kami</h2>

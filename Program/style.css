@@ -49,7 +49,7 @@ footer {
   margin: 0 auto;
 }
 
-/* navbar */
+/* NAVBAR (SEWA.HTML) */
 .navbar {
   background: var(--brand);
   color: var(--brand-contrast);
@@ -64,49 +64,75 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  padding: 12px 0;
-  margin: 0 auto;
+  max-width: 1500px;
+  /* padding: 12px 0; */
+  /* margin: 0 auto; */
 }
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 30px;
+  gap: 5px;
   text-decoration: none;
   color: var(--brand-contrast);
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 900;
+  font-style: italic;
 }
 .logo img {
-  width: 60px;
+  width: 75px;
   height: 60px;
   object-fit: contain;
 }
 nav a {
   color: var(--brand-contrast);
   text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
+  font-weight: 550;
   font-size: 17px;
   transition: color 0.25s ease;
+  margin-left: 25px;
+  font-style: bold;
 }
 nav a:hover {
-  color: #c7f9cc;
+  color: #dcee3c;
+}
+
+/* ==== NAVBAR dan BUTTON (INDEX.HTML) === */
+#brand-text {
+  font-size: 26px;
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Inter", Arial, sans-serif;
 }
 .navbar-nav .nav-link:hover {
   color: #dcee3c !important; /* efek hover  pada beranda, dkk */
 }
 
-/* button */
+.btn-primaryy {
+  font-size: 1.3rem !important;
+  display: inline-block;
+  background: #1f9d8a;
+  color: #ffffff;
+  padding: 10px 28px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 550;
+  /* border: 0; */
+  cursor: pointer;
+}
+.btn-primaryy:hover {
+  background: #157c6f;
+}
+
+/* ===== BUTTON (SEWA.HTML) ===== */
 .btn-primary {
   display: inline-block;
   background: #1f9d8a;
   color: #ffffff;
-  padding: 14px 28px;
-  font-size: 1.5rem; /* teks lebih besar */
-  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 550;
   border: 0;
   cursor: pointer;
   transition: background 0.25s ease, transform 0.1s ease;
@@ -118,25 +144,27 @@ nav a:hover {
   transform: translateY(1px);
 }
 
-/* ========= HERO DASHBOARD (INDEX.HTML) ======== */
-.content {
+/* ========= HERO SECTION (INDEX.HTML) ======== */
+.hero {
   min-height: 100vh;
   background: url("../A\ group\ of\ people\ hiking\ in\ the\ mountains\ \(1\).jpeg")
     center/cover no-repeat;
   color: var(--brand-contrast);
-  text-align: left;
+  /* text-align: left; */
   padding: 210px 50px;
 }
-
 /* Tambah bayangan lembut di bawah hero */
-.content::after {
+.hero::after {
   content: "";
   position: absolute;
-  bottom: -5px; /* supaya nutup garis batas */
-  left: 0;
-  width: 100%; /*lebar shadow bawah*/
-  height: 194px;
-  background: linear-gradient(rgba(116, 115, 115, 0.103), rgb(255, 255, 255));
+  bottom: 0px; /* supaya nutup garis batas */
+  left: 0; /* Lebar shadow kiri */
+  width: 100%; /*lebar shadow kanan */
+  height: 250px;
+  background: linear-gradient(
+    rgba(116, 115, 115, 0),
+    rgba(255, 255, 255, 0.863)
+  );
   /* untuk atur layer di web(semakin besar angkanya semakin atas) */
   z-index: 1;
 }
@@ -152,7 +180,6 @@ nav a:hover {
 
 .hero h4 {
   max-width: 700px;
-  /* margin: 10px auto 20px; */
   color: #333333;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
@@ -160,13 +187,26 @@ nav a:hover {
   font-size: 25px;
 }
 
-/* sections */
-.section {
-  padding: 60px 0;
-  text-align: center;
+/* === LAYANAN SECTION (INDEX.HTML) === */
+.layanan {
+  padding: 110px 0;
+  text-align: center; /*tulisan judul ditengah*/
+}
+.layanan h2 {
+  font-weight: bold;
 }
 .bg-light {
   background: var(--bg-light);
+}
+.card img {
+  width: 40%;
+  margin: 0 auto;
+}
+.card h3 {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 /* ======== MENGATUR GRID & CARD PRODUK (SEWA.HTML) ======= */
@@ -226,42 +266,48 @@ footer {
   margin-top: 10px;
 }
 
-/* =========== CART / KERANJANG =========  */
+/* =========== NAVBAR KANAN (SEWA.HTML) =========  */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 15px; /* jarak antar menu */
+  gap: 25px; /* jarak antar menu*/
 }
 
+/* ===== KERANJANG (SEWA.HTML) ===== */
 .cart-btn {
   display: flex;
-  align-items: center;
+  align-items: center; /*letak keranjang agar ditengah*/
   gap: 6px; /* jarak icon dan angka */
   cursor: pointer;
-  font-size: 18px;
+  font-size: 18px; /*ukuran angka di samping keranjang*/
 }
-
 .cart-btn i {
-  font-size: 20px;
+  font-size: 23px; /* ukuran keranjang */
 }
 
-/* ========= UNTUK TAMPILAN RESPONSIF ========== */
+/* ========= UNTUK TAMPILAN RESPONSIF (TOOGLE) ========== */
 @media (max-width: 768px) {
   .hero {
     padding: 80px 15px;
     background-position: center;
   }
-  nav a {
+  /* nav a {
     margin-left: 16px;
     font-size: 15px;
-  }
+  } */
   .logo img {
     width: 48px;
     height: 48px;
   }
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .navbar-toggler-icon {
+    filter: invert(1); /* biar iconnya jadi putih */
+  }
 }
 
-/* ========== CART PANEL ========== */
+/* ========== PANEL KERANJANG ========== */
 .btn-cart {
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -288,7 +334,6 @@ footer {
 .cart-panel.open {
   right: 0;
 }
-
 .cart-header {
   display: flex;
   justify-content: space-between;
@@ -305,7 +350,6 @@ footer {
   font-size: 18px;
   cursor: pointer;
 }
-
 .cart-items {
   flex: 1 1 auto;
   overflow-y: auto;
@@ -315,6 +359,27 @@ footer {
   border-bottom: 1px solid #f1f1f1;
   padding: 10px 0;
 }
+.cart-footer {
+  padding: 14px 16px 20px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.cart-backdrop.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ????? */
 .ci-name {
   font-weight: 600;
   margin-bottom: 6px;
@@ -344,27 +409,7 @@ footer {
   font-size: 16px;
 }
 
-.cart-footer {
-  padding: 14px 16px 20px;
-  border-top: 1px solid #eee;
-  background: #fff;
-}
-
-.cart-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-.cart-backdrop.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* new */
+/* ===== NEWW????? ====== */
 .hero-section {
   position: relative;
   text-align: center;
@@ -387,4 +432,142 @@ footer {
 .text-overlay p {
   margin: 16px 0;
   color: #212121;
+}
+
+/* =============== ABOUT SECTION (INDEX.HTML) ================ */
+/* About Section */
+.about,
+.menu,
+.kontak {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.kontak h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.kontak h2 span,
+.layanan h2 span,
+.feedback h2 span {
+  color: #136f63;
+}
+
+.about h2 {
+  font-weight: bold;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 30rem;
+}
+
+.about .row .about-img img {
+  width: 85%;
+  height: 90%;
+  padding-right: 0.1rem;
+}
+
+.about .row .content {
+  flex: 1 1 30rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 250;
+  line-height: 1.6;
+}
+
+/* ================ FEEDBACK SECTION (INDEX.HTML) ============ */
+/* FEEDBACK CARD */
+.feedback {
+  padding: 70px 0;
+  background: #f8f8f8;
+}
+
+.feedback h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.feedback-card {
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.feedback-card .profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.feedback-card .profile img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedback-card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.feedback-card p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.feedback-card .text {
+  margin: 15px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.stars {
+  color: #f7b500;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Warna background card */
+.feedback-card.pink {
+  border-left: 8px solid #d95fa3;
+}
+
+.feedback-card.green {
+  border-left: 8px solid #4cb86a;
+}
+
+.feedback-card.yellow {
+  border-left: 8px solid #f5b400;
 }

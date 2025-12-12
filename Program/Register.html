@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi | Veilside Adventure</title>
+  <style>
+    body { font-family: Arial; background: #e8f5f5; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+    .reg-box { background:white; padding:30px; width:350px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+    input { width:100%; padding:10px; margin:10px 0; border:1px solid #aaa; border-radius:5px; }
+    button { width:100%; padding:10px; background:#0c6452; color:white; border:none; border-radius:5px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="reg-box">
+    <h2>Registrasi</h2>
+    <input type="email" id="regEmail" placeholder="Email" required>
+    <input type="text" id="regUser" placeholder="Username" required>
+    <input type="password" id="regPass" placeholder="Password" required>
+    <button onclick="register()">Daftar</button>
+  </div>
+
+  <script>
+    function register(){
+      const email = regEmail.value.trim();
+      const user = regUser.value.trim();
+      const pass = regPass.value.trim();
+
+      let acc = JSON.parse(localStorage.getItem('accounts')||'[]');
+
+      if(acc.find(a=>a.email===email || a.username===user)){
+        alert('Email atau username sudah digunakan!'); return;
+      }
+
+      acc.push({email, username:user, password:pass, role:'user'});
+      localStorage.setItem('accounts', JSON.stringify(acc));
+      alert('Registrasi berhasil! Silakan login.');
+      window.location.href='login.html';
+    }
+  </script>
+</body>
+</html>

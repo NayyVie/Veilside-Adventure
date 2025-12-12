@@ -10,6 +10,39 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <style>
+      .navbar {
+        position: fixed; /* tetap di atas */
+        /* top: 10; */
+        /* left: 10; */
+        width: 100%;
+        background: #136f63;
+        padding: 15px 0px;
+        z-index: 9999;
+        height: 75px;
+        padding: 10px 0;
+      }
+      .nav-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* KIRI <----> KANAN */
+        padding: 0 15px; /*bisa kecilin kalau mau lebih mepet tulisan navbarnya */
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .logo img {
+        width: 60px;
+        height: auto;
+      }
+      body {
+        padding-top: 70px; /* biar konten turun tidak ketutup navbar */
+      }
+    </style>
   </head>
 
   <!-- NAVBAR -->
@@ -35,7 +68,7 @@
     </header>
 
     <section
-      class="hero"
+      class="heroo"
       style="
         background: #199181e3;
         color: #fff;
