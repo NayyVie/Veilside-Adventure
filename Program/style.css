@@ -146,6 +146,9 @@ nav a:hover {
 
 /* ========= HERO SECTION (INDEX.HTML) ======== */
 .hero {
+  position: relative;
+  z-index: 0;
+  margin-top: 80px;
   min-height: 100vh;
   background: url("../A\ group\ of\ people\ hiking\ in\ the\ mountains\ \(1\).jpeg")
     center/cover no-repeat;
@@ -167,6 +170,12 @@ nav a:hover {
   );
   /* untuk atur layer di web(semakin besar angkanya semakin atas) */
   z-index: 1;
+  pointer-events: none;
+}
+
+.hero .btn-primaryy {
+  position: relative;
+  z-index: 5;
 }
 
 .hero h1 {
@@ -288,6 +297,7 @@ footer {
 /* ========= UNTUK TAMPILAN RESPONSIF (TOOGLE) ========== */
 @media (max-width: 768px) {
   .hero {
+    margin-top: 80px;
     padding: 80px 15px;
     background-position: center;
   }
@@ -570,4 +580,53 @@ footer {
 
 .feedback-card.yellow {
   border-left: 8px solid #f5b400;
+}
+
+/* =====================================================
+   PROFILE MENU (ICON USER & LOGOUT)
+   Tambahan – TANPA mengubah CSS lama
+===================================================== */
+
+.profile-wrapper {
+  position: relative;
+  cursor: pointer;
+  margin-left: 20px;
+  z-index: 3000;
+}
+
+.profile-wrapper.hidden {
+  display: none;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  padding: 10px;
+  width: 140px;
+  display: none;
+  z-index: 3000;
+}
+
+.profile-wrapper.active .profile-dropdown {
+  display: block;
+}
+
+.profile-dropdown button {
+  width: 100%;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
 }

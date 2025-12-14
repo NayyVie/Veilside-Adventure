@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Veilside Adventure</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -56,6 +57,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="login-box">
     <h2>Login</h2>
@@ -65,39 +67,62 @@
 
     <button class="login-btn" onclick="login()">Masuk</button>
 
-    <a href="register.html" class="register-link">Belum punya akun? Daftar</a>
+    <a href="Register.html" class="register-link">Belum punya akun? Daftar</a>
   </div>
 
   <script>
-    // Membuat akun default (admin + user) jika belum ada
+    /* ===============================
+       BUAT AKUN DEFAULT (JIKA BELUM ADA)
+       =============================== */
     if (!localStorage.getItem("accounts")) {
       const defaultUsers = [
-        { username: "admin", password: "12345", role: "admin" },
-        { username: "user", password: "12345", role: "user" }
+        { name: "Administrator", username: "admin", password: "12345", role: "admin" },
+        { name: "User Veilside", username: "user", password: "12345", role: "user" }
       ];
       localStorage.setItem("accounts", JSON.stringify(defaultUsers));
     }
 
+    /* ===============================
+       FUNGSI LOGIN
+       =============================== */
     function login() {
-      const user = document.getElementById("username").value.trim();
-      const pass = document.getElementById("password").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!username || !password) {
+        alert("Username dan password wajib diisi!");
+        return;
+      }
 
       const accounts = JSON.parse(localStorage.getItem("accounts"));
-      const found = accounts.find(acc => acc.username === user && acc.password === pass);
+      const found = accounts.find(
+        acc => acc.username === username && acc.password === password
+      );
 
       if (!found) {
         alert("Username atau password salah!");
         return;
       }
 
-      // Simpan session login
-      sessionStorage.setItem("currentUser", JSON.stringify(found));
+       sessionStorage.setItem("currentUser", JSON.stringify(found));
+       console.log("LOGIN BERHASIL:", sessionStorage.getItem("currentUser"));
 
-      // Arahkan berdasarkan role
+      /* ===============================
+         SIMPAN USER LOGIN (UNTUK PROFILE)
+         =============================== */
+      localStorage.setItem("vs_user", JSON.stringify({
+        name: found.name,
+        username: found.username,
+        role: found.role
+      }));
+
+      /* ===============================
+         REDIRECT BERDASARKAN ROLE
+         =============================== */
       if (found.role === "admin") {
         window.location.href = "admin.html";
       } else {
-        window.location.href = "index.html"; // halaman user
+        window.location.href = "index.html";
       }
     }
   </script>

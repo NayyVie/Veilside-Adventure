@@ -1,130 +1,150 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Produk</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="logo.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
 
-    <style>
-      .navbar {
-        position: fixed; /* tetap di atas */
-        /* top: 10; */
-        /* left: 10; */
-        width: 100%;
-        background: #136f63;
-        padding: 15px 0px;
-        z-index: 9999;
-        height: 75px;
-        padding: 10px 0;
-      }
-      .nav-content {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* KIRI <----> KANAN */
-        padding: 0 15px; /*bisa kecilin kalau mau lebih mepet tulisan navbarnya */
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .logo img {
-        width: 60px;
-        height: auto;
-      }
-      body {
-        padding-top: 70px; /* biar konten turun tidak ketutup navbar */
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produk</title>
 
-  <!-- NAVBAR -->
-  <body>
-    <header class="navbar">
-      <div class="container nav-content">
-        <a href="index.html" class="logo">
-          <img src="logo.png" alt="Logo Veilside Adventure" />
-          <span>Veilside Adventure</span>
-        </a>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
 
-        <nav class="nav-menu">
-          <a href="index.html">Beranda</a>
-          <a href="form.html">Form Sewa</a>
+  <!-- Icon -->
+  <link rel="icon" href="logo.png" />
 
-          <!-- KERANJANG DI NAVBAR -->
-          <div id="cart-toggle" class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cart-count">1</span>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .navbar {
+      position: fixed;
+      width: 100%;
+      background: #136f63;
+      z-index: 9999;
+      height: 75px;
+      padding: 10px 0;
+    }
+
+    .nav-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 60px;
+      height: auto;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-content">
+
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo Veilside Adventure" />
+        <span>Veilside Adventure</span>
+      </a>
+
+      <!-- MENU -->
+      <nav class="nav-menu" style="display:flex; align-items:center; gap:20px;">
+        <a href="index.html">Beranda</a>
+        <a href="form.html">Form Sewa</a>
+
+        <!-- ===== PROFILE MENU ===== -->
+        <div id="profileWrapper" class="profile-wrapper hidden">
+          <img src="assets/profile.png" id="profileIcon" class="profile-icon">
+
+          <div class="profile-dropdown">
+            <p id="profileUsername">User</p>
+            <hr>
+            <button id="logoutBtn">Logout</button>
           </div>
-        </nav>
-      </div>
-    </header>
+        </div>
+        <!-- ===== END PROFILE ===== -->
 
-    <section
-      class="heroo"
-      style="
-        background: #199181e3;
-        color: #fff;
-        text-align: center;
-        padding: 60px 20px;
-      "
-    >
-      <div class="container">
-        <h2>Daftar Perlengkapan Outdoor</h2>
-        <p>
-          Pilih barang yang kamu butuhkan, lalu cek keranjang sebelum lanjut ke
-          form penyewaan.
-        </p>
-      </div>
-    </section>
+        <!-- KERANJANG -->
+        <div id="cart-toggle" class="cart-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">1</span>
+        </div>
+      </nav>
 
-    <section class="section">
-      <div class="container">
-        <div id="product-list" class="grid"></div>
-        <a
-          href="form.html"
-          class="btn-primary"
-          style="display: block; width: max-content; margin: 30px auto 0"
-        >
-          Lanjut ke Form Penyewaan
-        </a>
-      </div>
-    </section>
+    </div>
+  </header>
+  <!-- ================= END NAVBAR ================= -->
 
-    <!-- PANEL KERANJANG -->
-    <aside id="cart-panel" class="cart-panel" aria-label="Keranjang penyewaan">
-      <div class="cart-header">
-        <h3>Keranjang</h3>
-        <button id="cart-close" type="button">✕</button>
-      </div>
-      <div id="cart-items" class="cart-items">
-        <!-- item keranjang di-render via sewa.js -->
-      </div>
-      <div class="cart-footer">
-        <p>Total per hari: <strong id="cart-total">Rp 0</strong></p>
-        <a
-          href="form.html"
-          class="btn-primary"
-          style="width: 100%; text-align: center"
-          >Lanjut ke Form</a
-        >
-      </div>
-    </aside>
-    <div id="cart-backdrop" class="cart-backdrop"></div>
+  <!-- ================= HERO ================= -->
+  <section class="heroo" style="background:#199181e3;color:#fff;text-align:center;padding:60px 20px;">
+    <div class="container">
+      <h2>Daftar Perlengkapan Outdoor</h2>
+      <p>
+        Pilih barang yang kamu butuhkan, lalu cek keranjang sebelum lanjut ke
+        form penyewaan.
+      </p>
+    </div>
+  </section>
 
-    <footer>
-      <div class="container">
-        <p>© 2025 Veilside Adventure – Sistem Penyewaan Alat Outdoor</p>
-      </div>
-    </footer>
+  <!-- ================= PRODUK ================= -->
+  <section class="section">
+    <div class="container">
+      <div id="product-list" class="grid"></div>
 
-    <script src="sewa.js"></script>
-  </body>
+      <a href="form.html" class="btn-primary"
+        style="display:block;width:max-content;margin:30px auto 0">
+        Lanjut ke Form Penyewaan
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= KERANJANG ================= -->
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h3>Keranjang</h3>
+      <button id="cart-close" type="button">✕</button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-footer">
+      <p>Total per hari: <strong id="cart-total">Rp 0</strong></p>
+      <a href="form.html" class="btn-primary" style="width:100%;text-align:center">
+        Lanjut ke Form
+      </a>
+    </div>
+  </aside>
+
+  <div id="cart-backdrop" class="cart-backdrop"></div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Veilside Adventure – Sistem Penyewaan Alat Outdoor</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPT ================= -->
+  <script src="sewa.js"></script>
+  <script src="js/profile.js"></script>
+
+</body>
 </html>

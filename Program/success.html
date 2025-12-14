@@ -1,102 +1,175 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ringkasan Penyewaan</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="logo.png" />
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="container nav-content">
-        <a href="index.html" class="logo">
-          <img src="logo.png" alt="Logo Veilside Adventure" />
-          <span>Veilside Adventure</span>
-        </a>
-        <nav>
-          <a href="index.html">Beranda</a>
-          <a href="sewa.html">Sewa</a>
-        </nav>
-      </div>
-    </header>
 
-    <section class="section bg-light">
-      <div class="container">
-        <div class="card" id="summary-box">
-          <h2>✅ Transaksi Berhasil!</h2>
-          <p>
-            Terima kasih telah menyewa di <strong>Veilside Adventure</strong>.
-            Berikut ringkasan transaksi:
-          </p>
-          <div id="summary-content" style="margin-top: 20px"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ringkasan Penyewaan</title>
 
-          <div style="margin-top: 30px">
-            <a href="index.html" class="btn-primary">Kembali ke Beranda</a>
-            <a href="sewa.html" class="btn-primary" style="margin-left: 10px"
-              >Sewa Lagi</a
-            >
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+
+  <!-- Icon -->
+  <link rel="icon" href="logo.png" />
+
+  <style>
+    body {
+      padding-top: 80px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #136f63;
+      z-index: 9999;
+      height: 75px;
+      padding: 10px 0;
+    }
+
+    .nav-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-content">
+
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo Veilside Adventure" />
+        <span>Veilside Adventure</span>
+      </a>
+
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="sewa.html">Produk</a>
+
+        <!-- ===== PROFILE MENU ===== -->
+        <div id="profileWrapper" class="profile-wrapper hidden">
+          <img src="assets/profile.png" id="profileIcon" class="profile-icon">
+
+          <div class="profile-dropdown">
+            <p id="profileUsername">User</p>
+            <hr>
+            <button id="logoutBtn">Logout</button>
           </div>
         </div>
+        <!-- ===== END PROFILE ===== -->
+
+      </nav>
+    </div>
+  </header>
+  <!-- ================= END NAVBAR ================= -->
+
+  <!-- ================= CONTENT ================= -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="card" id="summary-box">
+        <h2>✅ Transaksi Berhasil!</h2>
+        <p>
+          Terima kasih telah menyewa di <strong>Veilside Adventure</strong>.
+          Berikut ringkasan transaksi:
+        </p>
+
+        <div id="summary-content" style="margin-top: 20px"></div>
+
+        <div style="margin-top: 30px">
+          <a href="index.html" class="btn-primary">Kembali ke Beranda</a>
+          <a href="sewa.html" class="btn-primary" style="margin-left: 10px">
+            Sewa Lagi
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <div class="container">
-        <p>© 2025 Veilside Adventure – Sistem Penyewaan Alat Outdoor</p>
-      </div>
-    </footer>
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Veilside Adventure – Sistem Penyewaan Alat Outdoor</p>
+    </div>
+  </footer>
 
-    <script>
-      const fmt = (n) => "Rp " + Number(n || 0).toLocaleString("id-ID");
-      const data = JSON.parse(sessionStorage.getItem("vs_lastOrder") || "null");
-      const box = document.getElementById("summary-content");
+  <!-- ================= SCRIPT ================= -->
+  <script>
+    const fmt = (n) => "Rp " + Number(n || 0).toLocaleString("id-ID");
+    const data = JSON.parse(sessionStorage.getItem("vs_lastOrder") || "null");
+    const box = document.getElementById("summary-content");
 
-      if (!data) {
-        box.innerHTML =
-          '<p>Data transaksi tidak ditemukan. Kembali ke <a href="form.html">form</a>.</p>';
-      } else {
-        const items = Array.isArray(data.items) ? data.items : [];
+    if (!data) {
+      box.innerHTML =
+        '<p>Data transaksi tidak ditemukan. Kembali ke <a href="form.html">form</a>.</p>';
+    } else {
+      const items = Array.isArray(data.items) ? data.items : [];
 
-        box.innerHTML = `
-          <p><strong>Nama Penyewa:</strong> ${data.name}</p>
-          <p><strong>Nomor WhatsApp:</strong> ${data.wa}</p>
-          <p><strong>Tanggal Sewa:</strong> ${data.start}</p>
-          <p><strong>Lama Sewa:</strong> ${data.days} hari</p>
-          <p><strong>Metode Pembayaran:</strong> ${String(
-            data.payment || ""
-          ).toUpperCase()}</p>
-          <hr>
-          <h3>Barang yang Disewa:</h3>
-          <ul>
-            ${items
-              .map((i) => `<li>${i.qty}x ${i.name} (${fmt(i.price)}/hari)</li>`)
-              .join("")}
-          </ul>
-          <hr>
-          <p>Subtotal per hari: <strong>${fmt(
-            data.totals?.subtotalPerDay
-          )}</strong></p>
-          <p>Subtotal (${data.days} hari): <strong>${fmt(
-          data.totals?.subtotal
-        )}</strong></p>
-          <p>Diskon: <strong>${fmt(data.totals?.discount)}</strong></p>
-          <h2>Total Bayar: ${fmt(data.totals?.total)}</h2>
-        `;
+      box.innerHTML = `
+        <p><strong>Nama Penyewa:</strong> ${data.name}</p>
+        <p><strong>Nomor WhatsApp:</strong> ${data.wa}</p>
+        <p><strong>Tanggal Sewa:</strong> ${data.start}</p>
+        <p><strong>Lama Sewa:</strong> ${data.days} hari</p>
+        <p><strong>Metode Pembayaran:</strong> ${String(data.payment || "").toUpperCase()}</p>
+        <hr>
+        <h3>Barang yang Disewa:</h3>
+        <ul>
+          ${items.map(i => `<li>${i.qty}x ${i.name} (${fmt(i.price)}/hari)</li>`).join("")}
+        </ul>
+        <hr>
+        <p>Subtotal per hari: <strong>${fmt(data.totals?.subtotalPerDay)}</strong></p>
+        <p>Subtotal (${data.days} hari): <strong>${fmt(data.totals?.subtotal)}</strong></p>
+        <p>Diskon: <strong>${fmt(data.totals?.discount)}</strong></p>
+        <h2>Total Bayar: ${fmt(data.totals?.total)}</h2>
+      `;
 
-        // simpan reminder H-1
-        const start = new Date(data.start);
-        const done = new Date(start);
-        done.setDate(start.getDate() + Number(data.days || 1));
-        localStorage.setItem(
-          "vs_reminder",
-          JSON.stringify({
-            nama: data.name,
-            tanggalSelesai: done.toISOString(),
-            wa: data.wa,
-          })
-        );
-      }
-    </script>
-  </body>
+      const start = new Date(data.start);
+      const done = new Date(start);
+      done.setDate(start.getDate() + Number(data.days || 1));
+
+      localStorage.setItem(
+        "vs_reminder",
+        JSON.stringify({
+          nama: data.name,
+          tanggalSelesai: done.toISOString(),
+          wa: data.wa,
+        })
+      );
+    }
+  </script>
+
+  <!-- PROFILE SCRIPT -->
+  <script src="js/profile.js"></script>
+
+</body>
 </html>

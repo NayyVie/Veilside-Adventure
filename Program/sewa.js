@@ -25,6 +25,41 @@
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
   }
 
+  // ================= PROFILE & LOGIN =================
+  function initProfile() {
+    var wrapper = $("profileWrapper");
+    var usernameEl = $("profileUsername");
+    var logoutBtn = $("logoutBtn");
+
+    if (!wrapper || !usernameEl || !logoutBtn) return;
+
+    var userRaw = sessionStorage.getItem("currentUser");
+
+    if (!userRaw) {
+      wrapper.classList.add("hidden");
+      return;
+    }
+
+    var user = JSON.parse(userRaw);
+    wrapper.classList.remove("hidden");
+    usernameEl.textContent = user.username;
+
+    wrapper.addEventListener("click", function (e) {
+      e.stopPropagation();
+      wrapper.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function () {
+      wrapper.classList.remove("active");
+    });
+
+    logoutBtn.addEventListener("click", function () {
+      if (!confirm("Yakin ingin logout?")) return;
+      sessionStorage.removeItem("currentUser");
+      window.location.href = "login.html";
+    });
+  }
+
   // hitung total + DISKON KAMIS (day=4) → dipakai di form & success
   function calcTotals(items, days) {
     var subtotalPerDay = items.reduce(function (s, i) {
@@ -541,6 +576,8 @@
 
   /* ========== BOOT ========== */
   function boot() {
+    initProfile();
+    
     var page = (location.pathname.split("/").pop() || "").toLowerCase();
     if (page === "sewa.html") {
       renderProducts();
