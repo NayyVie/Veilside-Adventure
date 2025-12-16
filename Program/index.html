@@ -3,236 +3,306 @@
  2. Ahsha Aisna Al Wafi > 1202230035
  3. Nayodya Fairuz Sadina > 1202230059
  4. Muhammad Habibie Ebam > 1202210017 
--->
+ -->
 
 <!DOCTYPE html>
 <html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veilside Adventure</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- font untuk di beranda bagian content -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veilside Adventure</title>
+  <body>
+    <!-- Navbar BOOTSTRAP -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: #136f63"
+    >
+      <div class="container-fluid">
+        <!-- untuk logo + nama -->
+        <a class="navbar-brand d-flex align-items-center text-white">
+          <img src="logo.png" alt="Logo" width="60" height="54" class="me-2" />
+          <span id="brand-text" class="fw-bold">Veilside Adventure</span>
+        </a>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+        <!-- untuk tampilan mobile (toogle) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!-- Icon -->
-  <link rel="icon" href="logo.png" />
+        <!-- Menu di navbar -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#home"
+                >Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="sewa.html">Produk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Riwayat</a>
+            </li>
+            <!-- LOGIN LINK -->
+            <li class="nav-item ms-3" id="loginNav">
+              <a href="login.html" class="nav-link text-white fw-bold">Login</a>
+            </li>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-
-  <!-- ================= NAVBAR ================= -->
-  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #136f63">
-    <div class="container-fluid">
-
-      <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center text-white">
-        <img src="logo.png" alt="Logo" width="60" height="54" class="me-2" />
-        <span class="fw-bold">Veilside Adventure</span>
-      </a>
-
-      <!-- Toggle Mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Menu -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#home">Beranda</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-white" href="sewa.html">Produk</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Riwayat</a>
-          </li>
-
-          <!-- ===== PROFILE MENU ===== -->
-          <li class="nav-item ms-3">
-            <div id="profileWrapper" class="profile-wrapper hidden">
-              <img src="assets/profile.png" id="profileIcon" class="profile-icon">
-
-              <div id="profileWrapper" class="profile-wrapper hidden">
-                <img src="assets/profile.png" id="profileIcon" class="profile-icon">
-
-                <div id="profileDropdown" class="profile-dropdown">
+            <!-- PROFILE ICON -->
+            <li class="nav-item ms-3 hidden" id="profileNav">
+              <div class="profile-wrapper">
+                <img src="user.png" id="profileIcon" class="profile-icon" />
+                <div class="profile-dropdown">
                   <p id="profileUsername">User</p>
-                  <hr>
+                  <hr />
                   <button id="logoutBtn">Logout</button>
                 </div>
               </div>
-          </li>
-          <!-- ===== END PROFILE ===== -->
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- ================= END NAVBAR ================= -->
-
-
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="home">
-    <main class="content">
-      <h1>Teman Setia Petualanganmu !</h1>
-      <br />
-      <h4>
-        Veilside Adventure menyediakan berbagai perlengkapan outdoor terbaik
-        untuk mendukung kegiatan camping, hiking, dan petualangan alam kamu.
-      </h4>
-      <br />
-      <a href="sewa.html" class="btn-primaryy">Sewa Sekarang</a>
-    </main>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2><span>About</span> Us</h2>
-
-      <div class="row">
-        <div class="about-img">
-          <img src="Logi_kotakOrange.png" alt="About Us" />
-        </div>
-        <div class="content">
-          <p>
-            Veilside Adventure hadir untuk mendukung para pecinta alam dalam
-            menjelajahi keindahan alam Indonesia tanpa perlu khawatir tentang
-            perlengkapan. Kami menyediakan layanan sewa perlengkapan outdoor
-            yang lengkap, berkualitas, dan terjangkau.
-          </p>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ================= LAYANAN ================= -->
-  <section class="layanan bg-light">
-    <div class="container">
-      <h2><span>Layanan</span> Kami</h2>
+    <!-- Hero section -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Teman Setia Petualanganmu !</h1>
+        <br />
+        <h4>
+          Veilside Adventure menyediakan berbagai perlengkapan outdoor terbaik
+          untuk mendukung kegiatan camping, hiking, dan petualangan alam kamu.
+        </h4>
+        <br />
+        <a href="sewa.html" class="btn-primaryy">Sewa Sekarang</a>
+      </main>
+    </section>
 
-      <div class="grid">
-        <div class="card">
-          <img src="rent-removebg-preview__1_-removebg-preview.png" />
-          <h3>Penyewaan Perlengkapan Outdoor</h3>
-          <p>
-            Nikmati kemudahan menyewa berbagai perlengkapan outdoor
-            dengan kondisi bersih dan siap pakai.
-          </p>
-        </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2><span>About</span> Us</h2>
 
-        <div class="card">
-          <img
-            src="Ilustrasi Lencana Petualangan Outdoor Gunung Vintage, Pendakian, Gunung, Lereng PNG dan Vektor dengan Background Transparan untuk Unduh Gratis.jfif" />
-          <h3>Antar-Jemput dan Guide Pendakian</h3>
-          <p>
-            Siap antar-jemput dan guide pendakian profesional.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FEEDBACK ================= -->
-  <section class="feedback">
-    <div class="container">
-      <h2><span>Apa Kata</span> Mereka?</h2>
-
-      <div class="feedback-grid">
-        <div class="feedback-card pink">
-          <p>★★★★★</p>
-          <p>Rekomendasi tempat sewa outdoor!</p>
-        </div>
-
-        <div class="feedback-card green">
-          <p>★★★★★</p>
-          <p>Barang lengkap dan pelayanan ramah</p>
-        </div>
-
-        <div class="feedback-card yellow">
-          <p>★★★★★</p>
-          <p>Perjalanan seru dan aman</p>
+        <div class="row">
+          <div class="about-img">
+            <img src="Logi_kotakOrange.png" alt="About Us" />
+          </div>
+          <div class="content">
+            <p>
+              Veilside Adventure hadir untuk mendukung para pecinta alam dalam
+              menjelajahi keindahan alam Indonesia tanpa perlu khawatir tentang
+              perlengkapan. Kami menyediakan layanan sewa perlengkapan outdoor
+              yang lengkap, berkualitas, dan terjangkau. Dengan sistem sewa yang
+              mudah serta pelayanan yang ramah, kami berkomitmen menjadi partner
+              terbaik dalam setiap perjalanan petualanganmu.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Veilside Adventure. Anda Nyaman Kami Senang.</p>
-    </div>
-  </footer>
+    <!-- Layanan Section -->
+    <section class="layanan bg-light" id="layanan">
+      <div class="container">
+        <h2><span>Layanan</span> Kami</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="rent-removebg-preview__1_-removebg-preview.png" />
+            <h3>Penyewaan Perlengkapan Outdoor</h3>
+            <p>
+              Nikmati kemudahan menyewa berbagai perlengkapan Outdoorseperti
+              tenda, kompor portable, sleeping bag, carrier, dan banyak lagi
+              alat outdoor lainnya. semua dalam kondisi bersih dan siap pakai
+            </p>
+          </div>
+          <div class="card">
+            <img
+              src="Ilustrasi Lencana Petualangan Outdoor Gunung Vintage, Pendakian, Gunung, Lereng PNG dan Vektor dengan Background Transparan untuk Unduh Gratis.jfif"
+            />
+            <h3>Antar-Jemput dan Guide Pendakian</h3>
+            <p>
+              Siap antar-jemput ke base camp pendakian Gunung Lawu, Bukit
+              Mongkrang, Bukit Kendhil, dan Bukit sekitar Tawangmanggu. Melayani
+              Guide Pendakian dan Porter Pendakian, siap menemani pendakian anda
+              dan mendokumentasikan selama perjalanan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    // 🔔 Cek apakah ada pengingat penyewaan di localStorage
-    const reminder = JSON.parse(
-      localStorage.getItem("vs_reminder") || "null"
-    );
-    if (reminder) {
-      const now = new Date();
-      const due = new Date(reminder.tanggalSelesai);
-      const oneDayBefore = new Date(due);
-      oneDayBefore.setDate(due.getDate() - 1);
+    <!-- Feedback Section -->
+    <section class="feedback" id="feedback">
+      <div class="container">
+        <h2><span>Apa Kata</span> Mereka?</h2>
 
-      // Jika hari ini sudah H-1
-      if (now.toDateString() === oneDayBefore.toDateString()) {
-        const msg = `Halo ${reminder.nama
+        <div class="feedback-grid">
+          <!-- Card 1 -->
+          <div class="feedback-card pink">
+            <div class="profile">
+              <img src="https://i.pravatar.cc/80?img=12" alt="User" />
+              <div>
+                <h3>Hamam Paruk</h3>
+                <p>Pendaki</p>
+              </div>
+            </div>
+
+            <p class="text">
+              Rekomendasi tempat sewa outdoor perbatasan Ngawi Magetan
+            </p>
+
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feedback-card green">
+            <div class="profile">
+              <img
+                src="https://images.pexels.com/photos/9163/night.jpg"
+                alt="User"
+              />
+              <div>
+                <h3>Much Panca</h3>
+                <p>Traveller</p>
+              </div>
+            </div>
+
+            <p class="text">
+              Rekomend buat para hiking atau trekking, Rental items are all
+              available
+            </p>
+
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feedback-card yellow">
+            <div class="profile">
+              <img src="https://i.pravatar.cc/80?img=45" alt="User" />
+              <div>
+                <h3>Alicia John</h3>
+                <p>Hiker</p>
+              </div>
+            </div>
+
+            <p class="text">
+              Perjalanan terorganisir dengan baik, aman, dan sangat seru!
+              Rekomendasi banget.
+            </p>
+
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="kontak">
+      <div class="container">
+        <h2><span>Hubungi</span> Kami</h2>
+        <p>Untuk pemesanan atau pertanyaan, hubungi kami melalui WhatsApp:</p>
+        <a href="https://wa.me/6281459125873" target="_blank" class="btn-primer"
+          >Chat via WhatsApp</a
+        >
+        <p class="small">
+          Atau kunjungi kami di Veilside Adventure Store, Kendal-Ngawi.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 Veilside Adventure. Anda Nyaman Kami Senang.</p>
+      </div>
+    </footer>
+
+    <script>
+      // 🔔 Cek apakah ada pengingat penyewaan di localStorage
+      const reminder = JSON.parse(
+        localStorage.getItem("vs_reminder") || "null"
+      );
+      if (reminder) {
+        const now = new Date();
+        const due = new Date(reminder.tanggalSelesai);
+        const oneDayBefore = new Date(due);
+        oneDayBefore.setDate(due.getDate() - 1);
+
+        // Jika hari ini sudah H-1
+        if (now.toDateString() === oneDayBefore.toDateString()) {
+          const msg = `Halo ${
+            reminder.nama
           }, ini pengingat dari Veilside Adventure 😊\nBesok (${due.toLocaleDateString(
             "id-ID"
           )}) adalah jadwal pengembalian barang sewaan Anda.\nTerima kasih sudah menyewa di Veilside Adventure!`;
-        const waURL = `https://wa.me/${reminder.wa}?text=${encodeURIComponent(
-          msg
-        )}`;
-        alert("🔔 Pengingat: Besok adalah jadwal pengembalian barang!");
-        window.open(waURL, "_blank");
-        // Hapus setelah dikirim agar tidak berulang
-        localStorage.removeItem("vs_reminder");
+          const waURL = `https://wa.me/${reminder.wa}?text=${encodeURIComponent(
+            msg
+          )}`;
+          alert("🔔 Pengingat: Besok adalah jadwal pengembalian barang!");
+          window.open(waURL, "_blank");
+          // Hapus setelah dikirim agar tidak berulang
+          localStorage.removeItem("vs_reminder");
+        }
       }
-    }
-  </script>
+    </script>
+  </body>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const userData = sessionStorage.getItem("currentUser");
 
+      const loginNav = document.getElementById("loginNav");
+      const profileNav = document.getElementById("profileNav");
+
       if (userData) {
         const user = JSON.parse(userData);
 
-        // Tampilkan profil
-        const profileWrapper = document.getElementById("profileWrapper");
-        profileWrapper.classList.remove("hidden");
+        loginNav.classList.add("hidden");
+        profileNav.classList.remove("hidden");
 
-        // Tampilkan username
         document.getElementById("profileUsername").innerText = user.username;
+      } else {
+        loginNav.classList.remove("hidden");
+        profileNav.classList.add("hidden");
       }
-    });
 
-    // Toggle dropdown
-    document.getElementById("profileIcon")?.addEventListener("click", () => {
-      document.getElementById("profileDropdown").classList.toggle("show");
-    });
+      // toggle dropdown
+      document.getElementById("profileIcon")?.addEventListener("click", () => {
+        document.querySelector(".profile-wrapper").classList.toggle("active");
+      });
 
-    // Logout
-    document.getElementById("logoutBtn")?.addEventListener("click", () => {
-      sessionStorage.removeItem("currentUser");
-      window.location.href = "login.html";
+      // logout
+      document.getElementById("logoutBtn")?.addEventListener("click", () => {
+        sessionStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+      });
     });
   </script>
-
-</body>
-
 </html>
